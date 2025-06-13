@@ -1,0 +1,23 @@
+{
+  "name": "solar-service",
+  "version": "1.0.0",
+  "description": "Microservicio para calcular la produccion solar",
+  "type": "module",
+  "main": "solar-server.mjs",
+  "scripts": {
+    "start": "node solar-server.mjs"
+  },
+  "keywords": [
+    "microservicio",
+    "produccion",
+    "solar",
+    "irradicion",
+    "nodejs" 
+   ],
+  "author": "energyner",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  solar-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solar-service
+    ports:
+      - "3010:3010"
+    restart: unless-stopped

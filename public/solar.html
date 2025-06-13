@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  API Producción Solar </title>
+     <!--Aplicando estilo a una estructura responsivo de tres columnas -->
+ <link rel="stylesheet" href="./style-solar.css" type="text/css"  >
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <h3> APIs Calculador Produccion Solar - APIs </h3>  
+   <p>Los scripts y ejercicios se encuentran en el Libro 7 -
+    Programando Paso a Paso y Más a la venta en Amazon.</p>
+</header>
+<!--2 Divisiones responsives-->
+<div class="wrapper"> 
+    <div class="column"> <!-- Primera división -->
+        <h3 class="subcapitulo1">API Produccion Solar</h3>
+
+<p><b> API roduccion Solar</b></p>
+<!--API Consumo Energetico-->
+<form id="solar-form">
+    <label for="area">Área-m2</label>
+    <input type="number" id="area" name="area" placeholder="area" required>
+    <label for="irradiacion">Irradiación: kW/h-m2</label>
+    <input type="number" id="irradiacion" name="irradiacion" placeholder="irradiacion"  required>
+    <label for="eficiencia">Eficiencia: (0 y 1)</label>
+    <input type="number" id="eficiencia" name="eficiencia" placeholder="eficiencia" step="0.01" required>
+    <button type="submit">Calcular</button>
+</form>
+
+<h4> Resultado Producción Solar, kWh:</h4>
+<p id="resultadoSolar"></p>
+
+</div>
+
+    <div class="column"> <!-- Segunda división -->
+        <h3 class="subcapitulo1"> Calculador Producción Solar. <br>
+                Facilitando la Gestión Eficiente de la Energía </h3>
+        <p><b>Descripción </b></p>
+        <p>La API Producción Solar está diseñada para realizar el cálculo de la producción energética estimada de paneles solares fotovoltaicos. 
+	Su propósito es proporcionar una herramienta sencilla y precisa para estimar la energía generada en un período determinado, 
+	basándose en parámetros técnicos clave. La API recibe como entradas el área total de los paneles solares (m2 ), la irradiación solar 
+	promedio en la ubicación y el período de tiempo especificado (kWh/m2 /año), y la eficiencia nominal de los paneles (). 
+	A partir de estos datos, aplica un algoritmo de cálculo que determina la energía anual generada (kWh/año). 
+	La salida principal de la API es el valor de la producción solar estimada, lo que la convierte en una herramienta invaluable 
+	para estudios de viabilidad, planificación de instalaciones solares y monitoreo de rendimiento..</p>
+        <p><b>Utilidad</b></p> 
+        <p>Esta API es de gran utilidad para la planificación y evaluación de proyectos de energía solar, permitiendo a usuarios y profesionales 
+	estimar rápidamente la producción eléctrica de un sistema fotovoltaico. Facilita la toma de decisiones informadas sobre la viabilidad y 
+	el tamaño óptimo de las instalaciones, tanto a pequeña como a gran escala. Además, sirve como una herramienta esencial para comprender 
+	el impacto potencial de la energía solar en el consumo energético y la reducción de la huella de carbono. Su simplicidad la hace accesible 
+	para análisis preliminares y demostraciones educativas en el ámbito de las energías renovables.</p>
+        <p><b>Beneficios </b></p>
+        <p>Esta API ofrece una serie de beneficios clave para la energía solar:
+		a) Optimización y Claridad en Proyectos  </p>
+            	b) Cuantificación del Ahorro Potencial
+		c) Apoyo a Decisiones Estratégicas
+		d) Accesibilidad y Monitoreo
+<p><b><i>a) Impacto Global</i></b></p>
+            <p>Esta API contribuye significativamente a la transición energética global al democratizar el acceso a herramientas 
+		esenciales de planificación solar, impulsando así la adopción de fuentes de energía renovable a gran escala. 
+		Al facilitar la evaluación rápida y precisa de proyectos fotovoltaicos en cualquier ubicación, promueve activamente 
+		la inversión en energía limpia, acelera la reducción de emisiones de carbono y apoya la consecución de los objetivos 
+		de sostenibilidad a nivel mundial.</p>
+            <p><b><i>b) Beneficios para la Comunidad Local</i></b></p>
+            <p>A nivel local, esta API aporta beneficios directos y significativos a la comunidad. 
+		a) Empoderamiento Ciudadano.
+			Permite a residentes y comunidades locales estimar de manera autónoma el potencial de generación de energía solar, 
+			fomentando la instalación de paneles solares en los hogares y centros publicos y comerciales.
+		b) Conciencia Ambiental. 
+			la API aumenta la conciencia al comprobar en numeros los beneficios de la energía renovable y el impacto 
+			en la reducción de la huella de carbono a nivel residencial y local.
+		c) Apoyo a Iniciativas Locales.
+			Facilita que grupos comunitarios, cooperativas energéticas y pequeñas empresas evalúen la viabilidad de proyectos 
+			solares a escala local, impulsando el desarrollo sostenible.
+		d) Promoción de la Educación.
+			Sirve como una herramienta educativa práctica para estudiantes y ciudadanos interesados en aprender 
+			sobre la energía solar y sus principios de funcionamiento.
+		  </p>
+
+        <p><b>Conclusión</b></p>
+        <p></p>
+        <p><b>¡Invitación a Colaboradores!</b></p>
+       <p>Para ampliar el alcance y funcionalidad de la API Producción Solar, en su versión 
+        básica, invitamos a desarrolladores, expertos en eficiencia energética y profesionales 
+        de datos a contribuir con mejoras que optimicen su rendimiento. A través de la 
+        incorporación de nuevas características, como análisis predictivos, 
+        evaluación de inversiones, compatibilidad con sensores inteligentes o integración 
+        con redes eléctricas inteligentes, podemos hacer que esta herramienta sea aún más poderosa. 
+        Todas las mejoras ayudarán a fortalecer el impacto en la gestión del consumo energético 
+        a nivel global.  </p> 
+ </div>
+
+</div>
+<footer>
+    <p>© 2025  Plantilla - APIs. (Cálculos Técnicos)</p>
+</footer>
+
+<script type="module" src="./nav-solar.mjs"></script>
+
+</body>
+</html>
