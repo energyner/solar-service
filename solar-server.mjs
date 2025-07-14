@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Cuando alguien acceda a la URL base de tu servicio Cloud Run (ej. https://tu-servicio.run.app/)
 // se servirá tu archivo consumption.html que está dentro de la carpeta 'public'.
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "consumption.html"));
+  res.sendFile(path.join(__dirname, "public", "solar.html"));
 });
 // --- FIN de MEJORAS ---
 

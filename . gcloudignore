@@ -1,0 +1,16 @@
+# Archivos comunes a ignorar en todos los servicios
+node_modules/
+dist/
+.env
+*.log
+.vscode/
+.idea/
+.git
+.gitignore
+#!include:.gitignore
+
+# Archivos temporales o de desarrollo
+*.tmp
+*.bak
+coverage/
+test/

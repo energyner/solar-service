@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
        <link rel="icon" href="./img/favicom.png" type="image/png" />
@@ -23,7 +24,8 @@
 
 </head>
 <body>
-<header class="header">
+
+
       <div id="1">
         <nav1 id="nav1"></nav1
         ><!--Menu de navegacion-->
@@ -31,6 +33,7 @@
 
       <div id="2">
         <div class="maindos">
+
            <h3>Despliegue de APIs en Google Cloud<br>
               Proyecto Modular Git<br>
               Class 7. Septima Parte</h3>
@@ -56,31 +59,50 @@
       </div>
     </header>
     <nav><ul></ul></nav>
-<!--2 Divisiones responsives-->
 <div class="wrapper"> 
-    <div class="column"> <!-- Primera división -->
+     <!--2 Divisiones responsives-->
+    <div class="wrapper">
+      <div class="column">    <!-- Primera división -->
         <h3 class="subcapitulo1">API Produccion Solar</h3>
+        <p><b>Registra los datos en el Formulario</b></p>
+        <!--API Consumo Energetico-->
+        <form id="solar-form">
+          <label for="area">Área-m2</label>
+          <input
+            type="number"
+            id="area"
+            name="area"
+            placeholder="area"
+            required
+          />
+          <label for="irradiacion">Irradiación: kW/h-m2</label>
+          <input
+            type="number"
+            id="irradiacion"
+            name="irradiacion"
+            placeholder="irradiacion"
+            required
+          />
+          <label for="eficiencia">Eficiencia: (0 y 1)</label>
+          <input
+            type="number"
+            id="eficiencia"
+            name="eficiencia"
+            placeholder="eficiencia"
+            step="0.01"
+            required
+          />
+          <button type="submit">Calcular</button>
+        </form>
 
-<p><b> API roduccion Solar</b></p>
-<!--API Consumo Energetico-->
-<form id="solar-form">
-    <label for="area">Área-m2</label>
-    <input type="number" id="area" name="area" placeholder="area" required>
-    <label for="irradiacion">Irradiación: kW/h-m2</label>
-    <input type="number" id="irradiacion" name="irradiacion" placeholder="irradiacion"  required>
-    <label for="eficiencia">Eficiencia: (0 y 1)</label>
-    <input type="number" id="eficiencia" name="eficiencia" placeholder="eficiencia" step="0.01" required>
-    <button type="submit">Calcular</button>
-</form>
-
-<h4> Resultado Producción Solar, kWh:</h4>
-<p id="resultadoSolar"></p>
+        <h4>Resultado Producción Solar, kWh:</h4>
+        <p id="resultadoSolar"></p>
+      </div>
 
 </div>
 
     <div class="column"> <!-- Segunda división -->
-        <h3 class="subcapitulo1"> Energía generada por Paneles Solares <br>
-                Calculador </h3>
+        <h3 class="subcapitulo1"> Energía generada por Paneles Solares <br>                 Calculador </h3>
         <p><b>Descripción </b></p>
         <p>La API Producción Solar está diseñada para realizar el cálculo de la producción energética estimada de paneles solares fotovoltaicos. 
 	Su propósito es proporcionar una herramienta sencilla y precisa para estimar la energía generada en un período determinado, 
@@ -122,26 +144,36 @@
 			Sirve como una herramienta educativa práctica para estudiantes y ciudadanos interesados en aprender 
 			sobre la energía solar y sus principios de funcionamiento.
 		  </p>
+     
 
-        <p><b>Conclusión</b></p>
+ <p><b>Conclusión</b></p>
         <p></p>
         <p><b>¡Invitación a Colaboradores!</b></p>
-       <p>Para ampliar el alcance y funcionalidad de la API Producción Solar, en su versión 
-        básica, invitamos a desarrolladores, expertos en eficiencia energética y profesionales 
-        de datos a contribuir con mejoras que optimicen su rendimiento. A través de la 
-        incorporación de nuevas características, como análisis predictivos, 
-        evaluación de inversiones, compatibilidad con sensores inteligentes o integración 
-        con redes eléctricas inteligentes, podemos hacer que esta herramienta sea aún más poderosa. 
-        Todas las mejoras ayudarán a fortalecer el impacto en la gestión del consumo energético 
-        a nivel global.  </p> 
- </div>
+        <p>
+          Para ampliar el alcance y funcionalidad de la API Producción Solar, en
+          su versión básica, invitamos a desarrolladores, expertos en eficiencia
+          energética y profesionales de datos a contribuir con mejoras que
+          optimicen su rendimiento. A través de la incorporación de nuevas
+          características, como análisis predictivos, evaluación de inversiones,
+          compatibilidad con sensores inteligentes o integración con redes
+          eléctricas inteligentes, podemos hacer que esta herramienta sea aún
+          más poderosa. Todas las mejoras ayudarán a fortalecer el impacto en la
+          gestión del consumo energético a nivel global.
+        </p>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+    <script>
+      window.onload = function () {
+        loadAll();
+      };
+    </script>
+    <script src="./js/menu_hamburger.js"></script>
+    <!--En esta pagina este script se coloca al final-->
+    <script src="./js/load_all.js">
+      /* incluye paginas exteriores*/
+    </script>
 
-</div>
-<footer>
-    <p>© 2025  Plantilla - APIs. (Cálculos Técnicos)</p>
-</footer>
-
-<script type="module" src="./nav-solar.mjs"></script>
-
-</body>
+    <script type="module" src="./nav-solar.mjs"></script>
+  </body>
 </html>

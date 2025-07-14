@@ -16,35 +16,34 @@ SON INDEX.HTML. ENTRENAMIENTO.HTML,  ETC*/
 debe ejecutarse solo después de que todo el contenido de la página esté completamente cargado. 
 Esto asegura que todos los elementos del DOM estén disponibles para su manipulación.  */
 
-async function loadHTML(url, elementId) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+function loadHTML(url, elementId) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(elementId).innerHTML = data;
+    })
+    .catch((error) => {
+      console.error("Error loading HTML:", error);
+    });
+}
 
-        const html = await response.text();
-        const el = document.getElementById(elementId);
-        if (el) {
-          el.innerHTML = html;
-          console.log(`Contenido cargado en #${elementId}`);
-        } else {
-          console.warn(`Elemento con ID "${elementId}" no encontrado.`);
-        }
-      } catch (error) {
-        console.error(`Error cargando ${url}:`, error);
-      }
+function loadAll() {
+
+    const elements = [
+        {url: './html/menu.html', id: 'nav1'},
+        {url: './html/dropdown.html', id: 'nav2'},
+        {url: './html/footer.html', id: 'footer'},
+               
+    ];
+
+
+  elements.forEach((element) => {
+    console.log(`Attempting to load HTML into element with id: ${element.id}`);
+    const el = document.getElementById(element.id);
+    if (el) {
+      loadHTML(element.url, element.id);
+    } else {
+      console.error(`Element with id "${element.id}" not found.`);
     }
-
-    function loadAll() {
-      const elements = [
-        { url: './html/menu.html', id: 'nav1' },
-        { url: './html/dropdown.html', id: 'nav2' },
-        { url: './html/footer.html', id: 'footer' }
-      ];
-
-      elements.forEach(el => loadHTML(el.url, el.id));
-    }
-
-    // Asegúrate de ejecutar solo cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', loadAll);
+  });
+}

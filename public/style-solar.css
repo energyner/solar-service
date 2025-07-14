@@ -7,12 +7,97 @@ body {
    * { /* selector universal */
     box-sizing: border-box;
    }
-   header, footer {
-    background-color: #333; 
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-   }
+   .header {
+  color: #f56a6a;
+  display: flex;
+  justify-content: space-between; /* Distribuir los elementos con espacio entre ellos */
+  align-items: center; /* Centrar verticalmente */
+  padding: 5px 0;
+  background-color: #fff; /* Color de fondo opcional */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para el encabezado */
+  text-align: center;
+}
+/* Estilos para las divisiones */
+#1,
+#2,
+#3 {
+  flex: 1; /* Asegura que cada div tome el mismo ancho */
+  padding: 10px;
+}
+/* Estilos para el logo */
+.logo_1 {
+  /* font-size: 24px;
+  font-weight: 300; */
+  margin-right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99; /* Asegura que esté por encima de otros elementos */
+}
+/* Estilos para el menú desplegable redes sociales */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #fff; /* Color de fondo opcional */
+  padding-top: 7.5em;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn img {
+  width: 25px; /* Establece el ancho deseado */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a img {
+  width: 22px;
+  height: 22px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ddd;
+}
+/*Estilos de dos divisiones*/
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se ajusten al ancho de la pantalla */
+}
+/*Estilos para el footer */
+footer {
+  background-color: rgb(26, 35, 126, 0.8); /* Color de fondo del footer */
+  color: #fff; /* Color del texto del footer */
+  text-align: center; /* Centra el texto del footer */
+  padding: 20px 0; /* Espacio interno del footer */
+  font-size: 14px;
+}
 
 /*estilos para los encabezamientos de los textos*/
 .subcapitulo1{
@@ -49,11 +134,77 @@ body {
   font-weight:300;
 }
 
-/*Estilos de dos divisiones*/
+/*Estilos personalizados para la API*/
+/*API de consumo-energetico*/
+/*Button*/
+button {
+  width: auto;
+  display: block;
+  max-width: 300px; /* Controla el ancho del formulario */
+  margin-bottom: 20px;
+  background-color: #dce7f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+button[type='submit']:hover {
+  background-color: #0056b3;
+}
+/*Estilos para el formulario */
 
-.wrapper {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las columnas se ajusten al ancho de la pantalla */
+form {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  position: relative; /* O absolute, fixed, sticky */
+  z-index: 10;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+input[type='number'] {
+  width: 60%;
+  padding: 4px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  position: relative; /* O absolute, fixed, sticky */
+  z-index: 10;
+}
+
+button[type='submit'] {
+  width: 60%;
+  padding: 6px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 10;
+}
+
+button[type='submit']:hover {
+  background-color: #0056b3;
+}
+/* Concatenar los selectores que se agreguen. Imprimir el resultado*/
+#resultadoSolar {
+  font-weight: bold;
+  color: #2c3e50; /* Un color oscuro para mejor legibilidad */
+  background-color: #ecf0f1; /* Un fondo claro para contraste */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #bdc3c7; /* Un borde suave para definición */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
 }
 
 .column {
@@ -65,101 +216,29 @@ body {
     text-align: left; /* Centra el contenido */
 }
 
-
    @media (max-width: 768px) {
     .column {
         flex: 0 0 100%; /* En pantallas más pequeñas, cada columna ocupa el 100% del ancho */
         max-width: 100%; /* Ancho máximo del 100% */
     }
    }
-/*estilos para los links*/
-.link-container-entrenamiento {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    position: relative; /* Añadido para asegurar que z-index funcione correctamente */
-}
 
-.link-item-entrenamiento {
-    display: block;
-    width: calc(100% - 20px); /* Ajusta el ancho para el padding de 10px a cada lado */
-    margin: 5px 0; /* Espaciado de 2px entre enlaces */
-    padding: 10px;/* Limitando la altura del contenedor a 5px entre enlaces */
-    background-color: hsl(164, 89%, 22%);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    position: relative; /* Añadido para asegurar que z-index funcione
-    correctamente */
-    z-index:6;
-}
-
-.link-item-entrenamiento:hover {
-    background-color: orange;
-}
-
-#noticias_New, #noticias_G {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-/*Estilos para los formularios */
-
-
-form {
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
+   @media (max-width: 600px) {
+  /* Estilos específicos para pantallas pequeñas */
+  input[type='text'],
+  input[type='number'] {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para facilitar la lectura */
+    padding: 12px; /* Aumenta el padding para mejorar la usabilidad táctil */
+    width: 100%; /* Asegura que los campos de entrada ocupen todo el ancho disponible */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
-  
-  label {
+  button {
+    font-size: 16px;
+    padding: 12px;
     display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
-  }
-  
-  input[type="number"] {
-    width: 60%;
-    padding: 4px;
-    margin-bottom: 4px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
+    width: 100%;
     box-sizing: border-box;
+    margin-top: 20px;
   }
-  
-  button[type="submit"] {
-    width: 60%;
-    padding: 6px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  /* Concatenar los selectores que se agreguen. Imprimir el resultado*/
-  #resultadoConsumo, #resultadoSolar {
-    font-weight: bold;
-    color: #2c3e50; /* Un color oscuro para mejor legibilidad */
-    background-color: #ecf0f1; /* Un fondo claro para contraste */
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    border: 1px solid #bdc3c7; /* Un borde suave para definición */
-    text-align: center; /* Centra el texto */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
-  }
+}
+

@@ -12,7 +12,7 @@ document.getElementById("solar-form").addEventListener("submit", (event) => {
   // URL de tu API desplegada en Google Cloud Run
   // ¡Asegúrate de que esta URL sea la correcta para tu servicio Cloud Run!
   const CLOUD_RUN_API_URL =
-    "https://solar-service-858389184339.us-east1.run.app/api/produccion-solar";
+    "https://solar-service-487796814360.us-east1.run.app/api/produccion-solar";
 
   // URL de tu API cuando se ejecuta localmente en tu PC (para desarrollo en laptop)
   const LOCAL_API_URL_LAPTOP = "http://localhost:3010/api/produccion-solar";
@@ -42,17 +42,11 @@ document.getElementById("solar-form").addEventListener("submit", (event) => {
     // Entorno de desarrollo local, accedido por IP en la red de área local (LAN)
     // Esto cubre casos donde el HTML es servido desde la IP local y la API también está en la LAN.
     API_PRODUCCION_FINAL_URL = LOCAL_API_URL_LAN;
-    console.log(
-      "Entorno detectado: Desarrollo local (LAN). URL API:",
-      API_PRODUCCION_FINAL_URL
-    );
+    console.log( "Entorno detectado: Desarrollo local (LAN). URL API:", API_PRODUCCION_FINAL_URL );
   } else {
     // Cualquier otro hostname (ej. *.run.app, o un dominio personalizado) se considera producción
     API_PRODUCCION_FINAL_URL = CLOUD_RUN_API_URL;
-    console.log(
-      "Entorno detectado: Producción (Cloud Run). URL API:",
-      API_PRODUCCION_FINAL_URL
-    );
+    console.log(      "Entorno detectado: Producción (Cloud Run). URL API:", API_PRODUCCION_FINAL_URL );
   }
 
   // 4. Ejecutar solicitud
